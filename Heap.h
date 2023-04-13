@@ -8,7 +8,7 @@
 
 class Heap {
 public:
-    int arr[1000000];
+    int arr[510100];
     int size;
 
     Heap();

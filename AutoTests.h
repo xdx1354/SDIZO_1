@@ -23,6 +23,7 @@ public:
     void testHeap(int);
     void testBST(int);
     long average(long[]);
+    fstream avgf;
 };
 
 

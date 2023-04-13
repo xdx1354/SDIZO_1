@@ -104,7 +104,7 @@ void BST::deleteRoot() {
         root = deleteNodeRecursive(root, root->value);
         size--;
 
-        balanceTree();                                              // wliczam czas balansowania drzewa
+        //balanceTree();                                              // wliczam czas balansowania drzewa
     }
     else{
         cout<<"Drzewo jest puste \n";
@@ -112,6 +112,7 @@ void BST::deleteRoot() {
 }
 
 Node* BST::deleteNodeRecursive(Node* current, int value) {
+
 
     if(current == NULL) return NULL;
 
@@ -157,6 +158,60 @@ Node* BST::deleteNodeRecursive(Node* current, int value) {
         }
     }
     return current;
+
+
+//    //jeśli podany element nie istnieje
+//    if(node == nullptr) return node;
+//    //jesli podany element jest mniejszy niz aktualny, szukamy odpowiedniego elementu
+//    if(value < node->value) node->left = deleteNodeRecursive(node->left, value);
+//        //jesli podany element jest większy niż aktualny, szukamy odpowiedniego elementu
+//    else if(value > node->value) node->right = deleteNodeRecursive(node->right, value);
+//    else {
+//        //brak syna
+//        if(node->left == nullptr && node->right == nullptr){
+//            //sprawdzenie czy podany element nie jest korzeniem
+//            if(node == root) {
+//                root = nullptr;
+//            } else {
+//                delete node;
+//                node = nullptr;
+//            }
+//        }
+//            //syn po prawej stronie
+//        else if(node->left == nullptr){
+//            auto temp = node->right;
+//            //sprawdzenie czy podany element nie jest korzeniem
+//            if(node == root) {
+//                root = temp;
+//            } else {
+//                delete node;
+//                node = nullptr;
+//                return temp;
+//            }
+//        }
+//            //syn po lewej stronie
+//        else if(node->right == nullptr){
+//            auto temp = node->left;
+//            //sprawdzenie czy podany element nie jest korzeniem
+//            if(node == root) {
+//                root = temp;
+//            } else {
+//                delete node;
+//                node = nullptr;
+//                return temp;
+//            }
+//        }
+//            //2 synów
+//        else {
+//            //szukamy najmniejszej wartości prawego syna
+//            auto temp = findMin(node->right);
+//            //przypisujemy wartość owego minimum do naszego elementu
+//            node->value = temp->value;
+//            //usuwamy to minimum
+//            node->right = deleteNodeRecursive(node->right, temp->value );
+//        }
+//    }
+//    return node;
 
 }
 
