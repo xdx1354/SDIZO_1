@@ -133,7 +133,8 @@ void AutoTests::testArray(int amountOfData) {
 
         for(int i=0; i<5; i++){
             time.start();
-            array->addAtPos(rand(), (rand()%(array->size-2)) +1);
+//            array->addAtPos(rand(), (rand()%(array->size-2)) +1);
+            array->addAtPos(rand(), array->size/2);
             time.stop();
             fout<<time.returnTime()<<"\n";
             avg += time.returnTime();
@@ -217,7 +218,8 @@ void AutoTests::testArray(int amountOfData) {
 
         for(int i=0; i<5; i++){
             time.start();
-            array->deletePos((rand()%(array->size-2)) +1);
+            //array->deletePos((rand()%(array->size-2)) +1);
+            array->deletePos(array->size/2);
             time.stop();
             fout<<time.returnTime()<<"\n";
             avg += time.returnTime();
@@ -246,7 +248,7 @@ void AutoTests::testArray(int amountOfData) {
 
         for(int i = 0; i < 5; i++){
             time.start();
-            array->find(rand());
+            array->find(-1);
             time.stop();
             fout<<time.returnTime()<<"\n";
             avg += time.returnTime();
@@ -335,7 +337,8 @@ void AutoTests::testList(int amountOfData) {
 
         for(int i=0; i<5; i++){
             time.start();
-            list->addAtPos(rand(), (rand()%(list->size-2)) +1);
+            //list->addAtPos(rand(), (rand()%(list->size-2)) +1);
+            list->addAtPos(rand(),list->size/2);
             time.stop();
             fout<<time.returnTime()<<"\n";
             avg += time.returnTime();
@@ -396,7 +399,7 @@ void AutoTests::testList(int amountOfData) {
         delete list;
     }
     fout.close();
-    avgf<<"delete last "<<avg*0.02<<endl;
+    avgf<<"delete last: "<<avg*0.02<<endl;
     avg = 0;
 
 
@@ -414,7 +417,8 @@ void AutoTests::testList(int amountOfData) {
 
         for(int i=0; i<5; i++){
             time.start();
-            list->removeFromPos((rand()%(list->size-2)) +1);
+            //list->removeFromPos((rand()%(list->size-2)) +1);
+            list->removeFromPos(list->size/2);
             time.stop();
             fout<<time.returnTime()<<"\n";
             avg += time.returnTime();
@@ -461,9 +465,8 @@ void AutoTests::testHeap(int amountOfData) {
     Heap* heap;                                       // pointer to array structure
     Time time;
     cout<<"\nBeginning automatic heap test for " <<amountOfData<<endl;
-    long tempResults[50];
-    long sum;
-
+    long long avg = 0;
+    avgf<<"\nBeginning automatic heap test for " <<amountOfData<<endl;
 
     //TESTING ADDING
     string name = location + "HEAP_ADDING_" + sizeData + ".txt";
@@ -477,22 +480,20 @@ void AutoTests::testHeap(int amountOfData) {
         for(int i=0; i<amountOfData; i++){
             heap->add(rand());
         }
-        cout<<"Heap sizeData after: " << heap->size<<endl;
 
         for(int i=0; i<5; i++){
-            cout<<"Heap sizeData before: " << heap->size<<endl;
             time.start();
             heap->add(1);
-            cout<<"Adding new element at pos: " << heap->size<<endl;
             time.stop();
             fout<<time.returnTime()<<"\n";
-
-
+            avg += time.returnTime();
         }
         delete heap;
     }
 
     fout.close();
+    avgf<<"Adding: "<<avg*0.02<<endl;
+    avg = 0;
 
 
     //TESTING DELETING ROOT
@@ -512,12 +513,15 @@ void AutoTests::testHeap(int amountOfData) {
             heap->removeRoot();
             time.stop();
             fout<<time.returnTime()<<"\n";
+            avg += time.returnTime();
         }
         fout<<"\n";
         //cout<<"Heap sizeData after: " << heap->sizeData<<endl;
         delete heap;
     }
     fout.close();
+    avgf<<"Deleting root: "<<avg*0.02<<endl;
+    avg = 0;
 
 
     //TESTING FIND()
@@ -529,7 +533,7 @@ void AutoTests::testHeap(int amountOfData) {
         heap = new Heap;                                  // creating new structure
 
         for(int i=0; i<amountOfData; i++){
-            heap->add(rand());
+            heap->add(-1);
         }
 
         for(int i=0; i<5; i++){
@@ -537,12 +541,15 @@ void AutoTests::testHeap(int amountOfData) {
             heap->find(rand());
             time.stop();
             fout<<time.returnTime()<<"\n";
+            avg += time.returnTime();
         }
         fout<<"\n";
         //cout<<"Heap sizeData after: " << heap->sizeData<<endl;
         delete heap;
     }
     fout.close();
+    avgf<<"find: "<<avg*0.02<<endl;
+    avg = 0;
 
 }
 
@@ -555,6 +562,8 @@ void AutoTests::testBST(int amountOfData) {
     BST* bst;                                      // pointer to array structure
     Time time;
     cout<<"\nBeginning automatic BST test for " <<amountOfData<<endl;
+    long long avg = 0;
+    avgf<<"\nBeginning automatic BST test for " <<amountOfData<<endl;
 
 
     //TESTING ADDING
@@ -576,10 +585,13 @@ void AutoTests::testBST(int amountOfData) {
             time.stop();
             bst->balanceTree();         //balansowanie drzewa
             fout<<time.returnTime()<<"\n";
+            avg += time.returnTime();
         }
         delete bst;
     }
     fout.close();
+    avgf<<"Adding: "<<avg*0.02<<endl;
+    avg = 0;
 
 
     //TESTING DELETING ROOT
@@ -603,10 +615,13 @@ void AutoTests::testBST(int amountOfData) {
             time.stop();
             bst->balanceTree();         //balansowanie drzewa
             fout<<time.returnTime()<<"\n";
+            avg += time.returnTime();
         }
         delete bst;
     }
     fout.close();
+    avgf<<"Deleting root: "<<avg*0.02<<endl;
+    avg = 0;
 
 
 
@@ -626,12 +641,15 @@ void AutoTests::testBST(int amountOfData) {
 
         for(int i=0; i<10; i++){
             time.start();
-            bst->find(rand());
+            bst->find(-1);
             time.stop();
             fout<<time.returnTime()<<"\n";
+            avg += time.returnTime();
         }
         delete bst;
     }
     fout.close();
+    avgf<<"find: "<<avg*0.02<<endl;
+    avg = 0;
 
 }
