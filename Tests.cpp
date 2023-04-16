@@ -52,7 +52,8 @@ void Tests::BST_tests() {
                 for(int i = 0 ;i < tempSize; i++){
                     bst.insert(rand());             //inserting random number
                 }
-
+                cout<<endl;
+                bst.print();
                 break;
             }
             case 2:{
@@ -65,6 +66,9 @@ void Tests::BST_tests() {
                     bst.insert(stoi(line));       //casting string to int
                 }
                 cout<<"\nGenerating new tree from file (\"dataFile.txt\").\n";
+
+                cout<<endl;
+                bst.print();
                 break;
             }
             case 3:{
@@ -73,6 +77,11 @@ void Tests::BST_tests() {
                 cin>>tempValue;
                 cout<<"\nAdding "<<tempValue<<" to bst tree.\n";
                 bst.insert(tempValue);
+                cout<<"Printing in order\n";
+                bst.printInOrder();
+
+                cout<<endl;
+                bst.print();
                 break;
             }
             case 4:{
@@ -95,7 +104,6 @@ void Tests::BST_tests() {
                 break;
             }
             case 6:{
-                //TODO: inOrder, postOrder, preOrder jesli jest za duze
                 if(bst.size<20){
                     bst.print();
                 }
@@ -258,6 +266,7 @@ void Tests::array_tests() {
                         break;
                     }
                 }
+                array.printArray();
                 break;
             }
             case 4:{
@@ -265,7 +274,7 @@ void Tests::array_tests() {
                 cout<<"\nWhich element do you want to delete?\n";
                 cout<<"1. From beginning. \n";
                 cout<<"2. From specific position. \n";
-                cout<<"3. Frome end.\n";
+                cout<<"3. From end.\n";
                 cin>>tempTask;
                 switch(tempTask){
                     default:{
@@ -296,6 +305,7 @@ void Tests::array_tests() {
                         break;
                     }
                 }
+                array.printArray();
                 break;
             }
             case 5:{
@@ -332,9 +342,7 @@ void Tests::array_tests() {
                 break;
             };
         }
-
     }
-
 }
 
 void Tests::list_tests() {
@@ -376,6 +384,7 @@ void Tests::list_tests() {
                 for(int i = 0 ;i < tempSize; i++){
                     list.addAtTheBeginning(rand());             //inserting random number
                 }
+                list.print();
                 break;
             }
             case 2:{
@@ -391,6 +400,7 @@ void Tests::list_tests() {
                     list.addAtTheBeginning(stoi(line));       //casting string to int
                 }
                 cout<<"\nGenerating new array from file.\n";
+                list.print();
                 break;
             }
             case 3:{
@@ -439,6 +449,7 @@ void Tests::list_tests() {
                         break;
                     }
                 }
+                list.print();
                 break;
             }
             case 4:{
@@ -446,7 +457,7 @@ void Tests::list_tests() {
                 cout<<"\nWhich element do you want to delete?\n";
                 cout<<"1. From beginning. \n";
                 cout<<"2. From specific position. \n";
-                cout<<"3. Frome end.\n";
+                cout<<"3. From end.\n";
                 cin>>tempTask;
                 switch(tempTask){
                     default:{
@@ -477,6 +488,7 @@ void Tests::list_tests() {
                         break;
                     }
                 }
+                list.print();
                 break;
             }
             case 5:{
@@ -504,8 +516,6 @@ void Tests::list_tests() {
                 autoTests.testList(250000);
                 autoTests.testList(500000);
                 autoTests.testList(1000000);
-
-
                 break;
             }
             default:{
@@ -556,6 +566,8 @@ void Tests::heap_tests() {
                 for(int i = 0 ;i < tempSize; i++){
                     heap.add(rand());             //inserting random number
                 }
+
+                heap.print();
                 break;
             }
             case 2:{
@@ -570,6 +582,7 @@ void Tests::heap_tests() {
                     heap.add(stoi(line));       //casting string to int
                 }
                 cout<<"\nGenerating new heap from file.\n";
+                heap.print();
                 break;
             }
             case 3:{
@@ -584,6 +597,7 @@ void Tests::heap_tests() {
             case 4:{
                 cout<<"Deleting from the beginning.";
                 heap.removeRoot();
+                heap.print();
                 break;
             }
             case 5:{

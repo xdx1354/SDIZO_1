@@ -61,7 +61,6 @@ bool Heap::find(int value) {
 
 void Heap::fix_up(int pos){
 
-    //V2
     int i = size-1;
     while (i!=0 && arr[parent(i)] > arr[i]){
         swap(arr[parent(i)], arr[i]);
