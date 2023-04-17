@@ -87,7 +87,8 @@ void Tests::BST_tests() {
             case 4:{
                 cout<<"\n Deleting root... Done.\n";
                 bst.deleteRoot();
-
+                cout<<endl;
+                bst.print();
                 break;
             }
             case 5:{
@@ -149,6 +150,7 @@ void Tests::BST_tests() {
                 cout<<"Balancing the tree.\n";
                 bst.balanceTree();
                 if(bst.size<20){
+                    cout<<endl;
                     bst.print();
                 }
                 else{
@@ -204,6 +206,8 @@ void Tests::array_tests() {
                 for(int i = 0 ;i < tempSize; i++){
                     array.addAtTheBeginning(rand());             //inserting random number
                 }
+                cout<<endl;
+                array.printArray();
                 break;
             }
             case 2:{
@@ -218,6 +222,8 @@ void Tests::array_tests() {
                     array.addAtTheBeginning(stoi(line));       //casting string to int
                 }
                 cout<<"\nGenerating new array from file.\n";
+                cout<<endl;
+                array.printArray();
                 break;
             }
             case 3:{
@@ -266,6 +272,7 @@ void Tests::array_tests() {
                         break;
                     }
                 }
+                cout<<endl;
                 array.printArray();
                 break;
             }
@@ -305,6 +312,7 @@ void Tests::array_tests() {
                         break;
                     }
                 }
+                cout<<endl;
                 array.printArray();
                 break;
             }
@@ -323,6 +331,7 @@ void Tests::array_tests() {
             }
             case 6:{
                 cout<<"Printing array:\n";
+                cout<<endl;
                 array.printArray();
                 break;
             }
@@ -353,7 +362,7 @@ void Tests::list_tests() {
 
     while(task != 0){
 
-        cout<<"\n\n List data structure. Choose what do you want to do: \n";
+        cout<<"\n\n Doubly linked list data structure. Choose what do you want to do: \n";
 
         cout<<"1. Generate new list (random elements, predefined size) \n";
         cout<<"2. Generate new list (elements form file, predefined size)\n";
@@ -384,6 +393,7 @@ void Tests::list_tests() {
                 for(int i = 0 ;i < tempSize; i++){
                     list.addAtTheBeginning(rand());             //inserting random number
                 }
+                cout<<endl;
                 list.print();
                 break;
             }
@@ -400,6 +410,7 @@ void Tests::list_tests() {
                     list.addAtTheBeginning(stoi(line));       //casting string to int
                 }
                 cout<<"\nGenerating new array from file.\n";
+                cout<<endl;
                 list.print();
                 break;
             }
@@ -449,6 +460,7 @@ void Tests::list_tests() {
                         break;
                     }
                 }
+                cout<<endl;
                 list.print();
                 break;
             }
@@ -488,6 +500,7 @@ void Tests::list_tests() {
                         break;
                     }
                 }
+                cout<<endl;
                 list.print();
                 break;
             }
@@ -535,7 +548,7 @@ void Tests::heap_tests() {
 
     while(task != 0){
 
-        cout<<"\n\n List data structure. Choose what do you want to do: \n";
+        cout<<"\n\n Heap data structure. Choose what do you want to do: \n";
 
         cout<<"1. Generate new heap (random elements, predefined size) \n";
         cout<<"2. Generate new heap (elements form file, predefined size)\n";
@@ -582,6 +595,7 @@ void Tests::heap_tests() {
                     heap.add(stoi(line));       //casting string to int
                 }
                 cout<<"\nGenerating new heap from file.\n";
+                cout<<endl;
                 heap.print();
                 break;
             }
@@ -597,6 +611,7 @@ void Tests::heap_tests() {
             case 4:{
                 cout<<"Deleting from the beginning.";
                 heap.removeRoot();
+                cout<<endl;
                 heap.print();
                 break;
             }
@@ -615,6 +630,7 @@ void Tests::heap_tests() {
             }
             case 6:{
                 cout<<"Printing heap:\n";
+                cout<<endl;
                 heap.print();
                 break;
             }

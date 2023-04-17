@@ -59,39 +59,39 @@ int main(){
         }
     }
 
-    autoTests.testArray(1000);
-    autoTests.testArray(10000);
-    autoTests.testArray(20000);
-    autoTests.testArray(50000);
-    autoTests.testArray(100000);
-    autoTests.testArray(250000);
-    autoTests.testArray(500000);
+//    autoTests.testArray(1000);
+//    autoTests.testArray(10000);
+//    autoTests.testArray(20000);
+//    autoTests.testArray(50000);
+//    autoTests.testArray(100000);
+//    autoTests.testArray(250000);
+//    autoTests.testArray(500000);
+////
+////
+//    autoTests.testList(1000);
+//    autoTests.testList(10000);
+//    autoTests.testList(20000);
+//    autoTests.testList(50000);
+//    autoTests.testList(100000);
+//    autoTests.testList(250000);
+//    autoTests.testList(500000);
 //
 //
-    autoTests.testList(1000);
-    autoTests.testList(10000);
-    autoTests.testList(20000);
-    autoTests.testList(50000);
-    autoTests.testList(100000);
-    autoTests.testList(250000);
-    autoTests.testList(500000);
-
-
-    autoTests.testHeap(1000);
-    autoTests.testHeap(10000);
-    autoTests.testHeap(20000);
-    autoTests.testHeap(50000);
-    autoTests.testHeap(100000);
-    autoTests.testHeap(250000);
-    autoTests.testHeap(500000);
-
-
-    autoTests.testBST(1000);
-    autoTests.testBST(10000);
-    autoTests.testBST(20000);
-    autoTests.testBST(50000);
-    autoTests.testBST(100000);
-    autoTests.testBST(250000);
-    autoTests.testBST(500000);
+//    autoTests.testHeap(1000);
+//    autoTests.testHeap(10000);
+//    autoTests.testHeap(20000);
+//    autoTests.testHeap(50000);
+//    autoTests.testHeap(100000);
+//    autoTests.testHeap(250000);
+//    autoTests.testHeap(500000);
+//
+//
+//    autoTests.testBST(1000);
+//    autoTests.testBST(10000);
+//    autoTests.testBST(20000);
+//    autoTests.testBST(50000);
+//    autoTests.testBST(100000);
+//    autoTests.testBST(250000);
+//    autoTests.testBST(500000);
 
 }
